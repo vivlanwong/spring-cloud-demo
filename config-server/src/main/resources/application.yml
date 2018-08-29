@@ -1,0 +1,36 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      trace:
+        enabled: true
+    config:
+      server:
+        git:
+          uri: D:\OpenSource\service-config-repo     # ≈‰÷√git≤÷ø‚µƒµÿ÷∑
+#          username: vivlanwong120729@gmail.com                                        # git≤÷ø‚µƒ’À∫≈
+#          password: tymyd2012<>
+#          proxy:
+#            https:
+#              host: vemex.cn
+#              port: '81181'
+#          proxy:
+#            http:
+#                  host: cn-north-1.coia.hcvpc.io
+#                  port: '9400'
+#            https:
+#              host: cn-north-1.coia.hcvpc.io
+#              port: '9400'
+  profiles:
+    active: git
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
